@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvEstudiantes = new System.Windows.Forms.DataGridView();
-            this.estudianteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnCalcular = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDNI = new System.Windows.Forms.TextBox();
@@ -50,63 +49,59 @@
             this.txtNota3 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtProm = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.txtSitu = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtProm = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.estudianteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apaternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amaternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cursosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nota1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nota2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nota3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Promedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Situacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtCurso = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvEstudiantes
             // 
+            this.dgvEstudiantes.AllowUserToAddRows = false;
             this.dgvEstudiantes.AutoGenerateColumns = false;
             this.dgvEstudiantes.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvEstudiantes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstudiantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dniDataGridViewTextBoxColumn,
-            this.apaternoDataGridViewTextBoxColumn,
-            this.amaternoDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
             this.nombresDataGridViewTextBoxColumn,
             this.cursosDataGridViewTextBoxColumn,
             this.edadDataGridViewTextBoxColumn,
-            this.nota1DataGridViewTextBoxColumn,
-            this.nota2DataGridViewTextBoxColumn,
-            this.nota3DataGridViewTextBoxColumn,
-            this.Promedio,
-            this.Situacion});
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
             this.dgvEstudiantes.DataSource = this.estudianteBindingSource;
-            this.dgvEstudiantes.Location = new System.Drawing.Point(12, 190);
+            this.dgvEstudiantes.Location = new System.Drawing.Point(12, 203);
             this.dgvEstudiantes.Name = "dgvEstudiantes";
             this.dgvEstudiantes.Size = new System.Drawing.Size(776, 228);
             this.dgvEstudiantes.TabIndex = 0;
-            // 
-            // estudianteBindingSource
-            // 
-            this.estudianteBindingSource.DataSource = typeof(SistemaColegio.Estudiante);
             // 
             // btnCalcular
             // 
@@ -121,7 +116,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 26);
+            this.label1.Location = new System.Drawing.Point(73, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 2;
@@ -129,14 +124,14 @@
             // 
             // txtDNI
             // 
-            this.txtDNI.Location = new System.Drawing.Point(108, 23);
+            this.txtDNI.Location = new System.Drawing.Point(108, 22);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(148, 20);
             this.txtDNI.TabIndex = 3;
             // 
             // txtApa
             // 
-            this.txtApa.Location = new System.Drawing.Point(108, 50);
+            this.txtApa.Location = new System.Drawing.Point(108, 48);
             this.txtApa.Name = "txtApa";
             this.txtApa.Size = new System.Drawing.Size(148, 20);
             this.txtApa.TabIndex = 5;
@@ -144,7 +139,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 53);
+            this.label2.Location = new System.Drawing.Point(15, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 13);
             this.label2.TabIndex = 4;
@@ -152,7 +147,7 @@
             // 
             // txtAma
             // 
-            this.txtAma.Location = new System.Drawing.Point(108, 78);
+            this.txtAma.Location = new System.Drawing.Point(108, 74);
             this.txtAma.Name = "txtAma";
             this.txtAma.Size = new System.Drawing.Size(148, 20);
             this.txtAma.TabIndex = 7;
@@ -160,7 +155,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 81);
+            this.label3.Location = new System.Drawing.Point(13, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 6;
@@ -169,7 +164,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(50, 109);
+            this.label5.Location = new System.Drawing.Point(50, 102);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 8;
@@ -177,7 +172,7 @@
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(108, 106);
+            this.txtNom.Location = new System.Drawing.Point(108, 99);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(148, 20);
             this.txtNom.TabIndex = 9;
@@ -185,7 +180,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(67, 138);
+            this.label4.Location = new System.Drawing.Point(67, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 8;
@@ -193,7 +188,7 @@
             // 
             // txtEdad
             // 
-            this.txtEdad.Location = new System.Drawing.Point(108, 135);
+            this.txtEdad.Location = new System.Drawing.Point(108, 151);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(148, 20);
             this.txtEdad.TabIndex = 9;
@@ -201,7 +196,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 26);
+            this.label6.Location = new System.Drawing.Point(28, 25);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 13);
             this.label6.TabIndex = 8;
@@ -209,7 +204,7 @@
             // 
             // txtNota1
             // 
-            this.txtNota1.Location = new System.Drawing.Point(76, 23);
+            this.txtNota1.Location = new System.Drawing.Point(76, 22);
             this.txtNota1.Name = "txtNota1";
             this.txtNota1.Size = new System.Drawing.Size(159, 20);
             this.txtNota1.TabIndex = 9;
@@ -217,7 +212,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 52);
+            this.label7.Location = new System.Drawing.Point(28, 51);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 8;
@@ -225,7 +220,7 @@
             // 
             // txtNota2
             // 
-            this.txtNota2.Location = new System.Drawing.Point(76, 49);
+            this.txtNota2.Location = new System.Drawing.Point(76, 48);
             this.txtNota2.Name = "txtNota2";
             this.txtNota2.Size = new System.Drawing.Size(159, 20);
             this.txtNota2.TabIndex = 9;
@@ -233,7 +228,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(28, 78);
+            this.label8.Location = new System.Drawing.Point(28, 77);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(42, 13);
             this.label8.TabIndex = 8;
@@ -241,7 +236,7 @@
             // 
             // txtNota3
             // 
-            this.txtNota3.Location = new System.Drawing.Point(76, 75);
+            this.txtNota3.Location = new System.Drawing.Point(76, 74);
             this.txtNota3.Name = "txtNota3";
             this.txtNota3.Size = new System.Drawing.Size(159, 20);
             this.txtNota3.TabIndex = 9;
@@ -255,12 +250,14 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtAma);
             this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtCurso);
             this.groupBox1.Controls.Add(this.txtEdad);
+            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtNom);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(273, 172);
+            this.groupBox1.Size = new System.Drawing.Size(273, 185);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS:";
@@ -280,30 +277,22 @@
             this.groupBox2.Controls.Add(this.txtNota2);
             this.groupBox2.Location = new System.Drawing.Point(291, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(253, 172);
+            this.groupBox2.Size = new System.Drawing.Size(253, 185);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "NOTAS:";
             // 
-            // txtProm
+            // panel1
             // 
-            this.txtProm.Location = new System.Drawing.Point(76, 109);
-            this.txtProm.Name = "txtProm";
-            this.txtProm.Size = new System.Drawing.Size(159, 20);
-            this.txtProm.TabIndex = 11;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 114);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 13);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Promedio:";
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.Location = new System.Drawing.Point(17, 108);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(218, 3);
+            this.panel1.TabIndex = 14;
             // 
             // txtSitu
             // 
-            this.txtSitu.Location = new System.Drawing.Point(76, 135);
+            this.txtSitu.Location = new System.Drawing.Point(76, 151);
             this.txtSitu.Name = "txtSitu";
             this.txtSitu.Size = new System.Drawing.Size(159, 20);
             this.txtSitu.TabIndex = 13;
@@ -311,19 +300,27 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 138);
+            this.label10.Location = new System.Drawing.Point(16, 154);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(54, 13);
             this.label10.TabIndex = 12;
             this.label10.Text = "Situación:";
             // 
-            // panel1
+            // txtProm
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.Location = new System.Drawing.Point(17, 100);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(218, 3);
-            this.panel1.TabIndex = 14;
+            this.txtProm.Location = new System.Drawing.Point(76, 125);
+            this.txtProm.Name = "txtProm";
+            this.txtProm.Size = new System.Drawing.Size(159, 20);
+            this.txtProm.TabIndex = 11;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(16, 130);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(54, 13);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Promedio:";
             // 
             // groupBox3
             // 
@@ -336,34 +333,94 @@
             this.groupBox3.Controls.Add(this.btnCalcular);
             this.groupBox3.Location = new System.Drawing.Point(550, 13);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(238, 171);
+            this.groupBox3.Size = new System.Drawing.Size(238, 184);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(122, 124);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(105, 35);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.Text = "SALIR";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(11, 124);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(105, 35);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "ELIMINAR";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(122, 87);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(105, 35);
+            this.btnModificar.TabIndex = 2;
+            this.btnModificar.Text = "MODIFICAR";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(9, 87);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(105, 35);
+            this.btnGuardar.TabIndex = 2;
+            this.btnGuardar.Text = "GUARDAR";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(122, 50);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(105, 35);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Location = new System.Drawing.Point(9, 50);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(105, 35);
+            this.btnNuevo.TabIndex = 2;
+            this.btnNuevo.Text = "NUEVO";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
+            // 
+            // estudianteBindingSource
+            // 
+            this.estudianteBindingSource.DataSource = typeof(SistemaColegio.Estudiante);
             // 
             // dniDataGridViewTextBoxColumn
             // 
             this.dniDataGridViewTextBoxColumn.DataPropertyName = "Dni";
             this.dniDataGridViewTextBoxColumn.HeaderText = "Dni";
             this.dniDataGridViewTextBoxColumn.Name = "dniDataGridViewTextBoxColumn";
-            this.dniDataGridViewTextBoxColumn.Width = 60;
             // 
-            // apaternoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.apaternoDataGridViewTextBoxColumn.DataPropertyName = "Ape. Paterno";
-            this.apaternoDataGridViewTextBoxColumn.HeaderText = "Apaterno";
-            this.apaternoDataGridViewTextBoxColumn.Name = "apaternoDataGridViewTextBoxColumn";
-            this.apaternoDataGridViewTextBoxColumn.Width = 80;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Apaterno";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Apaterno";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // amaternoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.amaternoDataGridViewTextBoxColumn.DataPropertyName = "Ape. Materno";
-            this.amaternoDataGridViewTextBoxColumn.HeaderText = "Amaterno";
-            this.amaternoDataGridViewTextBoxColumn.Name = "amaternoDataGridViewTextBoxColumn";
-            this.amaternoDataGridViewTextBoxColumn.Width = 80;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Amaterno";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Amaterno";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // nombresDataGridViewTextBoxColumn
             // 
-            this.nombresDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nombresDataGridViewTextBoxColumn.DataPropertyName = "Nombres";
             this.nombresDataGridViewTextBoxColumn.HeaderText = "Nombres";
             this.nombresDataGridViewTextBoxColumn.Name = "nombresDataGridViewTextBoxColumn";
@@ -379,106 +436,46 @@
             this.edadDataGridViewTextBoxColumn.DataPropertyName = "Edad";
             this.edadDataGridViewTextBoxColumn.HeaderText = "Edad";
             this.edadDataGridViewTextBoxColumn.Name = "edadDataGridViewTextBoxColumn";
-            this.edadDataGridViewTextBoxColumn.Width = 40;
             // 
-            // nota1DataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.nota1DataGridViewTextBoxColumn.DataPropertyName = "Nota 1";
-            this.nota1DataGridViewTextBoxColumn.HeaderText = "Nota1";
-            this.nota1DataGridViewTextBoxColumn.Name = "nota1DataGridViewTextBoxColumn";
-            this.nota1DataGridViewTextBoxColumn.Width = 45;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Nota1";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Nota1";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // nota2DataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn4
             // 
-            this.nota2DataGridViewTextBoxColumn.DataPropertyName = "Nota 2";
-            this.nota2DataGridViewTextBoxColumn.HeaderText = "Nota2";
-            this.nota2DataGridViewTextBoxColumn.Name = "nota2DataGridViewTextBoxColumn";
-            this.nota2DataGridViewTextBoxColumn.Width = 45;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Nota2";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Nota2";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // nota3DataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn5
             // 
-            this.nota3DataGridViewTextBoxColumn.DataPropertyName = "Nota 3";
-            this.nota3DataGridViewTextBoxColumn.HeaderText = "Nota3";
-            this.nota3DataGridViewTextBoxColumn.Name = "nota3DataGridViewTextBoxColumn";
-            this.nota3DataGridViewTextBoxColumn.Width = 45;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Nota3";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Nota3";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
-            // Promedio
+            // label11
             // 
-            this.Promedio.HeaderText = "Promedio";
-            this.Promedio.Name = "Promedio";
-            this.Promedio.Width = 60;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(60, 128);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(42, 13);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Cursos:";
             // 
-            // Situacion
+            // txtCurso
             // 
-            this.Situacion.HeaderText = "Situación";
-            this.Situacion.Name = "Situacion";
-            this.Situacion.Width = 80;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Location = new System.Drawing.Point(9, 50);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(105, 35);
-            this.btnNuevo.TabIndex = 2;
-            this.btnNuevo.Text = "NUEVO";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(122, 50);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(105, 35);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.Text = "BUSCAR";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(9, 87);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(105, 35);
-            this.btnGuardar.TabIndex = 2;
-            this.btnGuardar.Text = "GUARDAR";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(122, 87);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(105, 35);
-            this.btnModificar.TabIndex = 2;
-            this.btnModificar.Text = "MODIFICAR";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(11, 124);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(105, 35);
-            this.btnEliminar.TabIndex = 2;
-            this.btnEliminar.Text = "ELIMINAR";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(122, 124);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(105, 35);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "SALIR";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            this.txtCurso.Location = new System.Drawing.Point(108, 125);
+            this.txtCurso.Name = "txtCurso";
+            this.txtCurso.Size = new System.Drawing.Size(148, 20);
+            this.txtCurso.TabIndex = 9;
             // 
             // FrmEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 428);
+            this.ClientSize = new System.Drawing.Size(800, 448);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -487,12 +484,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estudiante";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -500,7 +497,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvEstudiantes;
-        private System.Windows.Forms.BindingSource estudianteBindingSource;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDNI;
@@ -526,23 +522,29 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dniDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apaternoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amaternoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombresDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cursosDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nota1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nota2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nota3DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Promedio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Situacion;
+        //private System.Windows.Forms.DataGridViewTextBoxColumn apaternoDataGridViewTextBoxColumn;
+        //private System.Windows.Forms.DataGridViewTextBoxColumn amaternoDataGridViewTextBoxColumn;
+        //private System.Windows.Forms.DataGridViewTextBoxColumn nota1DataGridViewTextBoxColumn;
+        //private System.Windows.Forms.DataGridViewTextBoxColumn nota2DataGridViewTextBoxColumn;
+        //private System.Windows.Forms.DataGridViewTextBoxColumn nota3DataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dniDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombresDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cursosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.BindingSource estudianteBindingSource;
+        private System.Windows.Forms.TextBox txtCurso;
+        private System.Windows.Forms.Label label11;
     }
 }
 

@@ -12,7 +12,7 @@ namespace ClassColegio
 
         public bool EsEntero(string txt)
         {
-            if (int.TryParse(txt, out int result))
+            if (int.TryParse(txt, out _))
             {
                 return true;
             }

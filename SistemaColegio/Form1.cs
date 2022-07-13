@@ -47,12 +47,19 @@ namespace SistemaColegio
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-
+            Modificar(dgvEstudiantes);
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-
+            DialogResult result = MessageBox.Show("¿Esta seguro de eliminar el registro?", "Salir", MessageBoxButtons.YesNoCancel);
+            if (result == DialogResult.Yes)
+            {
+                string dni = dgvEstudiantes.CurrentRow.Cells[0].Value.ToString();
+                ctrl.Eliminar(dni);
+                btnNuevo.PerformClick();
+                ctrl.Visualizar(null, dgvEstudiantes);
+            }
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
@@ -63,7 +70,31 @@ namespace SistemaColegio
 
         private void Calcular()
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(txtDNI.Text) || string.IsNullOrEmpty(txtAma.Text) || string.IsNullOrEmpty(txtApa.Text)
+                || string.IsNullOrEmpty(txtNom.Text) || string.IsNullOrEmpty(txtCurso.Text) || string.IsNullOrEmpty(txtEdad.Text))
+            {
+                MessageBox.Show("Ingrese todos los datos");
+            }
+            else
+            {
+                ValidacionNota vv = new ValidacionNota();
+                if (vv.EsEntero(txtEdad.Text) && vv.EsEntero(txtNota1.Text) && vv.EsEntero(txtNota2.Text) && vv.EsEntero(txtNota3.Text))
+                {
+                    if (vv.ValidarRango(int.Parse(txtNota1.Text)) && vv.ValidarRango(int.Parse(txtNota2.Text)) && vv.ValidarRango(int.Parse(txtNota3.Text)))
+                    {
+                        Evalucion eva = new Evalucion();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Notas fuera de rango");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Notas fuera de rango");
+                }
+            }
         }
 
         private void Guardar()
@@ -73,39 +104,63 @@ namespace SistemaColegio
             string apa = txtApa.Text;
             string ama = txtAma.Text;
             string nom = txtNom.Text;
+            string curso = txtCurso.Text;
 
             ValidacionNota vv = new ValidacionNota();
 
-            if (!string.IsNullOrEmpty(apa) && !string.IsNullOrEmpty(ama) && !string.IsNullOrEmpty(nom) 
+            if (!string.IsNullOrEmpty(apa) && !string.IsNullOrEmpty(ama) && !string.IsNullOrEmpty(nom) && !string.IsNullOrEmpty(curso)
                 && vv.EsEntero(txtEdad.Text) && vv.EsEntero(txtNota1.Text) && vv.EsEntero(txtNota2.Text) && vv.EsEntero(txtNota3.Text))
             {
-                Estudiante est = new Estudiante();
-                est.Apaterno = apa;
-                est.Amaterno = ama;
-                est.Nombres = nom;
-                est.Edad = int.Parse(txtEdad.Text);
-                est.Nota1 = int.Parse(txtNota1.Text);
-                est.Nota2 = int.Parse(txtNota2.Text);
-                est.Nota3 = int.Parse(txtNota3.Text);
-
-                if (txtDNI.Text != "")
+                if (vv.ValidarRango(int.Parse(txtNota1.Text)) && vv.ValidarRango(int.Parse(txtNota2.Text)) && vv.ValidarRango(int.Parse(txtNota3.Text)))
                 {
-                    est.Dni = txtDNI.Text;
-                    sentinela = ctrl.Actualizar(est);
+                    Estudiante est = new Estudiante
+                    {
+                        Apaterno = apa,
+                        Amaterno = ama,
+                        Nombres = nom,
+                        Cursos = curso,
+                        Edad = int.Parse(txtEdad.Text),
+                        Nota1 = int.Parse(txtNota1.Text),
+                        Nota2 = int.Parse(txtNota2.Text),
+                        Nota3 = int.Parse(txtNota3.Text)
+                    };
+
+                    if (txtDNI.Text != "")
+                    {
+                        est.Dni = txtDNI.Text;
+                        sentinela = ctrl.Actualizar(est);
+                    }
+                    else { sentinela = ctrl.Insertar(est); }
+
+                    if (sentinela)
+                    {
+                        MessageBox.Show("Registro guardado");
+                        btnNuevo.PerformClick();
+                        ctrl.Visualizar(null, dgvEstudiantes);
+                    }
                 }
-                else {  sentinela = ctrl.Insertar(est); }
-
-                if (sentinela)
+                else
                 {
-                    MessageBox.Show("Registro guardado");
-                    btnNuevo.PerformClick();
-                    ctrl.Visualizar(null, dgvEstudiantes);
+                    MessageBox.Show("Notas fuera de rango");
                 }
             }
             else
             {
-                MessageBox.Show("Datos incompletos");
+                MessageBox.Show("Ingresar datos correctamente");
             }
+        }
+
+        private void Modificar(DataGridView dgv)
+        {
+            txtDNI.Text = dgv.CurrentRow.Cells[0].Value.ToString();
+            txtApa.Text = dgv.CurrentRow.Cells[1].Value.ToString();
+            txtAma.Text = dgv.CurrentRow.Cells[2].Value.ToString();
+            txtNom.Text = dgv.CurrentRow.Cells[3].Value.ToString();
+            txtCurso.Text = dgv.CurrentRow.Cells[4].Value.ToString();
+            txtEdad.Text = dgv.CurrentRow.Cells[5].Value.ToString();
+            txtNota1.Text = dgv.CurrentRow.Cells[6].Value.ToString();
+            txtNota2.Text = dgv.CurrentRow.Cells[7].Value.ToString();
+            txtNota3.Text = dgv.CurrentRow.Cells[8].Value.ToString();
         }
     }
 }
