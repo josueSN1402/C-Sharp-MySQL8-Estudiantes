@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ClassColegio;
+using System;
 using System.Windows.Forms;
-using ClassColegio;
 
 namespace SistemaColegio
 {
@@ -28,7 +21,7 @@ namespace SistemaColegio
 
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
-            foreach(Control c in this.Controls)
+            foreach (Control c in this.Controls)
             {
                 if (c is TextBox) c.Text = string.Empty;
             }
@@ -65,7 +58,7 @@ namespace SistemaColegio
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("¿Seguro de salir del programa?", "Salir", MessageBoxButtons.YesNo);
-            if (result== DialogResult.Yes)  { Application.Exit(); }
+            if (result == DialogResult.Yes) { Application.Exit(); }
         }
 
         private void Calcular()
@@ -83,17 +76,16 @@ namespace SistemaColegio
                     if (vv.ValidarRango(int.Parse(txtNota1.Text)) && vv.ValidarRango(int.Parse(txtNota2.Text)) && vv.ValidarRango(int.Parse(txtNota3.Text)))
                     {
                         Evalucion eva = new Evalucion();
-
+                        double nota1 = double.Parse(txtNota1.Text);
+                        double nota2 = double.Parse(txtNota2.Text);
+                        double nota3 = double.Parse(txtNota3.Text);
+                        double prom = eva.CalcPromedio(nota1, nota2, nota3);
+                        txtProm.Text = Convert.ToString(prom);
+                        txtSitu.Text = eva.EvaSituacion(prom);
                     }
-                    else
-                    {
-                        MessageBox.Show("Notas fuera de rango");
-                    }
+                    else { MessageBox.Show("Notas fuera de rango"); }
                 }
-                else
-                {
-                    MessageBox.Show("Notas fuera de rango");
-                }
+                else { MessageBox.Show("Ingrese correctamente las notas"); }
             }
         }
 
@@ -101,6 +93,7 @@ namespace SistemaColegio
         {
             bool sentinela;
 
+            string dni = txtDNI.Text;
             string apa = txtApa.Text;
             string ama = txtAma.Text;
             string nom = txtNom.Text;
@@ -108,13 +101,15 @@ namespace SistemaColegio
 
             ValidacionNota vv = new ValidacionNota();
 
-            if (!string.IsNullOrEmpty(apa) && !string.IsNullOrEmpty(ama) && !string.IsNullOrEmpty(nom) && !string.IsNullOrEmpty(curso)
-                && vv.EsEntero(txtEdad.Text) && vv.EsEntero(txtNota1.Text) && vv.EsEntero(txtNota2.Text) && vv.EsEntero(txtNota3.Text))
+            if (!string.IsNullOrEmpty(dni) && !string.IsNullOrEmpty(apa) && !string.IsNullOrEmpty(ama) && !string.IsNullOrEmpty(nom)
+                && !string.IsNullOrEmpty(curso) && vv.EsEntero(txtEdad.Text) && vv.EsEntero(txtNota1.Text) 
+                && vv.EsEntero(txtNota2.Text) && vv.EsEntero(txtNota3.Text))
             {
                 if (vv.ValidarRango(int.Parse(txtNota1.Text)) && vv.ValidarRango(int.Parse(txtNota2.Text)) && vv.ValidarRango(int.Parse(txtNota3.Text)))
                 {
                     Estudiante est = new Estudiante
                     {
+                        Dni = dni,
                         Apaterno = apa,
                         Amaterno = ama,
                         Nombres = nom,
@@ -125,12 +120,17 @@ namespace SistemaColegio
                         Nota3 = int.Parse(txtNota3.Text)
                     };
 
-                    if (txtDNI.Text != "")
+                   DialogResult result = MessageBox.Show("¿Desa guardar un nuevo registro? \n(Si pulsa NO se actualizara un registro existente según el DNI ingresado)", "Guardar o actualizar", MessageBoxButtons.YesNoCancel);
+
+                    if (result == DialogResult.Yes)
                     {
-                        est.Dni = txtDNI.Text;
+                        sentinela = ctrl.Insertar(est);
+                    }
+                    else if (result == DialogResult.No)
+                    {
                         sentinela = ctrl.Actualizar(est);
                     }
-                    else { sentinela = ctrl.Insertar(est); }
+                    else { sentinela = false; }
 
                     if (sentinela)
                     {

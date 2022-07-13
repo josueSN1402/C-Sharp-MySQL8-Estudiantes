@@ -9,7 +9,7 @@ namespace MSTesting
         [TestMethod]
         public void TestEsEntero()
         {
-            ValidacionNota val = new ValidacionNota();
+            ValidacionNota val = new();
             bool result = val.EsEntero("15");
             Assert.AreEqual(result, true);
         }
@@ -17,7 +17,7 @@ namespace MSTesting
         [TestMethod]
         public void TestValidacionRangoDeLaNota1()
         {
-            ValidacionNota val = new ValidacionNota();
+            ValidacionNota val = new();
             bool result = val.ValidarRango(24);
             Assert.AreEqual(result, false);
         }
@@ -25,7 +25,7 @@ namespace MSTesting
         [TestMethod]
         public void TestValidacionRangoDeLaNota2()
         {
-            ValidacionNota val = new ValidacionNota();
+            ValidacionNota val = new();
             bool result = val.ValidarRango(20);
             Assert.AreEqual(result, true);
         }
@@ -33,7 +33,7 @@ namespace MSTesting
         [TestMethod]
         public void TestPromedio1()
         {
-            Evalucion eva = new Evalucion();
+            Evalucion eva = new();
             double result = eva.CalcPromedio(15, 16, 17);
             Assert.AreEqual(result, 16);
         }
@@ -41,7 +41,7 @@ namespace MSTesting
         [TestMethod]
         public void TestPromedio2()
         {
-            Evalucion eva = new Evalucion();
+            Evalucion eva = new();
             double result = eva.CalcPromedio(16, 17, 17);
             Assert.AreEqual(result, 16.67);
         }
@@ -49,7 +49,7 @@ namespace MSTesting
         [TestMethod]
         public void TestSituacion1()
         {
-            Evalucion eva = new Evalucion();
+            Evalucion eva = new();
             string result = eva.EvaSituacion(16);
             Assert.AreEqual(result, "EXCELENTE");
         }
@@ -57,7 +57,7 @@ namespace MSTesting
         [TestMethod]
         public void TestSituacion2()
         {
-            Evalucion eva = new Evalucion();
+            Evalucion eva = new();
             string result = eva.EvaSituacion(10);
             Assert.AreEqual(result, "SUSTITUTORIO");
         }
