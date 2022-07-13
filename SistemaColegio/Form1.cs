@@ -149,15 +149,20 @@ namespace SistemaColegio
 
         private void Modificar(DataGridView dgv)
         {
-            txtDNI.Text = dgv.CurrentRow.Cells[0].Value.ToString();
-            txtApa.Text = dgv.CurrentRow.Cells[1].Value.ToString();
-            txtAma.Text = dgv.CurrentRow.Cells[2].Value.ToString();
-            txtNom.Text = dgv.CurrentRow.Cells[3].Value.ToString();
-            txtCurso.Text = dgv.CurrentRow.Cells[4].Value.ToString();
-            txtEdad.Text = dgv.CurrentRow.Cells[5].Value.ToString();
-            txtNota1.Text = dgv.CurrentRow.Cells[6].Value.ToString();
-            txtNota2.Text = dgv.CurrentRow.Cells[7].Value.ToString();
-            txtNota3.Text = dgv.CurrentRow.Cells[8].Value.ToString();
+            if (dgvEstudiantes.SelectedRows.Count == 0 || !string.IsNullOrEmpty(txtDNI.Text))
+            {
+                txtDNI.Text = dgv.CurrentRow.Cells[0].Value.ToString();
+                txtApa.Text = dgv.CurrentRow.Cells[1].Value.ToString();
+                txtAma.Text = dgv.CurrentRow.Cells[2].Value.ToString();
+                txtNom.Text = dgv.CurrentRow.Cells[3].Value.ToString();
+                txtCurso.Text = dgv.CurrentRow.Cells[4].Value.ToString();
+                txtEdad.Text = dgv.CurrentRow.Cells[5].Value.ToString();
+                txtNota1.Text = dgv.CurrentRow.Cells[6].Value.ToString();
+                txtNota2.Text = dgv.CurrentRow.Cells[7].Value.ToString();
+                txtNota3.Text = dgv.CurrentRow.Cells[8].Value.ToString();
+            } else {
+                MessageBox.Show("Seleccione una celca de la tabla o ingrese dato en el campo DNI");
+            }
         }
 
         private void Limpiar()
@@ -171,7 +176,11 @@ namespace SistemaColegio
             txtNota1.Text = string.Empty;
             txtNota2.Text = string.Empty;
             txtNota3.Text = string.Empty;
+            txtProm.Text = string.Empty;
+            txtSitu.Text = string.Empty;
             txtDNI.Focus();
+            dgvEstudiantes.ClearSelection();
+            ctrl.Visualizar("", dgvEstudiantes);
         }
     }
 }
