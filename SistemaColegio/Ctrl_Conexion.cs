@@ -25,7 +25,7 @@ namespace SistemaColegio
             else { Visualizar("", dgv); }
         }
 
-        private void Visualizar(string filtro, DataGridView dgv)
+        public void Visualizar(string filtro, DataGridView dgv)
         {
             dgv.DataSource = base.Consulta(filtro);
         }
