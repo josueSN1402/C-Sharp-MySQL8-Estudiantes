@@ -1,5 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ClassColegio;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MSTesting
 {

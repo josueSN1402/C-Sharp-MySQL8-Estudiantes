@@ -7,7 +7,7 @@ namespace ClassColegio
         public double CalcPromedio(double n1, double n2, double n3)
         {
             double promedio = (n1 + n2 + n3) / 3;
-            promedio = Math.Round(promedio * 100) /100;
+            promedio = Math.Round(promedio * 100) / 100;
             return promedio;
         }
 

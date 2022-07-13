@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace ClassColegio
+﻿namespace ClassColegio
 {
     public class ValidacionNota
     {
         public bool ValidarRango(int valor)
         {
-            if (valor>=0 && valor<=20) return true; 
+            if (valor >= 0 && valor <= 20) return true;
             else return false;
         }
 
