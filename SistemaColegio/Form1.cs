@@ -10,19 +10,23 @@ using System.Windows.Forms;
 
 namespace SistemaColegio
 {
-    public partial class Form1 : Form
+    public partial class FrmEstudiante : Form
     {
-        public Form1()
+        public FrmEstudiante()
         {
             InitializeComponent();
-            visualizar(null);
+            Visualizar();
         }
 
-        private void visualizar(string filtro)
+        private void Visualizar()
         {
-            Control_Estudiante ctrl = new Control_Estudiante();
-            dgvEstudiantes.DataSource = ctrl.consulta(filtro);
+            Ctrl_Conexion ctrl = new Ctrl_Conexion();
+            ctrl.EstadoConexion(dgvEstudiantes);
         }
 
+        private void BtnCalcular_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

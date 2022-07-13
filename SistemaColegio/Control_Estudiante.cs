@@ -9,7 +9,7 @@ namespace SistemaColegio
 {
     public class Control_Estudiante : Conexion
     {
-        public List<Object> consulta(string filtro)
+        public List<Object> Consulta(string filtro)
         {
             MySqlDataReader reader;
             List<Object> listProduc = new List<object>();
@@ -33,16 +33,18 @@ namespace SistemaColegio
 
                 while (reader.Read())
                 {
-                    Estudiante estu = new Estudiante();
-                    estu.Dni = reader.GetString("DNI");
-                    estu.Apaterno = reader.GetString("Apaterno");
-                    estu.Amaterno = reader.GetString("Amaterno");
-                    estu.Nombres = reader.GetString("Nombres");
-                    estu.Cursos = reader.GetString("Cursos");
-                    estu.Edad = int.Parse(reader.GetString("Edad"));
-                    estu.Nota1 = int.Parse(reader.GetString("Nota1"));
-                    estu.Nota2 = int.Parse(reader.GetString("Nota2"));
-                    estu.Nota3 = int.Parse(reader.GetString("Nota3"));
+                    Estudiante estu = new Estudiante
+                    {
+                        Dni = reader.GetString("DNI"),
+                        Apaterno = reader.GetString("Apaterno"),
+                        Amaterno = reader.GetString("Amaterno"),
+                        Nombres = reader.GetString("Nombres"),
+                        Cursos = reader.GetString("Cursos"),
+                        Edad = int.Parse(reader.GetString("Edad")),
+                        Nota1 = int.Parse(reader.GetString("Nota1")),
+                        Nota2 = int.Parse(reader.GetString("Nota2")),
+                        Nota3 = int.Parse(reader.GetString("Nota3"))
+                    };
                     listProduc.Add(estu);
                 }
             }
@@ -53,9 +55,9 @@ namespace SistemaColegio
             return listProduc;
         }
 
-        public bool insertar(Estudiante est)
+        public bool Insertar(Estudiante est)
         {
-            bool sentinela = false;
+            bool sentinela;
             string sql = "INSERT INTO estudiante (DNI, Apaterno, Amaterno, Nombres, Cursos, Edad, Nota1, Nota2, Nota3) VALUES ('" + est.Dni + "', '" + est.Apaterno + "','" + est.Amaterno + "','" + est.Nombres + "', '" + est.Cursos + "', '" + est.Edad + "', '" + est.Nota1 + "', '" + est.Nota2 + "', '" + est.Nota3 + "')";
 
             try
@@ -74,9 +76,9 @@ namespace SistemaColegio
             return sentinela;
         }
 
-        public bool actualizar(Estudiante est)
+        public bool Actualizar(Estudiante est)
         {
-            bool sentinela = false;
+            bool sentinela;
             string sql = "UPDATE estudiante SET Apaterno='" + est.Apaterno + "', Amaterno='" + est.Amaterno + "', Nombres='" + est.Nombres + "', Cursos='" + est.Cursos + "', Edad='" + est.Edad + "', Nota1='" + est.Nota1 + "', Nota2='" + est.Nota2 + "', Nota3='" + est.Nota3 + "' WHERE DNI='" + est.Dni + "'";
 
             try
@@ -95,9 +97,9 @@ namespace SistemaColegio
             return sentinela;
         }
 
-        public bool eliminar(string dni)
+        public bool Eliminar(string dni)
         {
-            bool sentinela = false;
+            bool sentinela;
             string sql = "DELETE FROM estudiante WHERE DNI='" + dni + "'";
 
             try
