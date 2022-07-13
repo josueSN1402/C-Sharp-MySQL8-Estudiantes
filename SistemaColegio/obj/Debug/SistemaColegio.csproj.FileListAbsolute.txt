@@ -17,10 +17,10 @@ D:\PM\Ciclo 3\2-PSoftware\PSoftware - Clases\22-07-12\SistemaColegio\SistemaCole
 D:\PM\Ciclo 3\2-PSoftware\PSoftware - Clases\22-07-12\SistemaColegio\SistemaColegio\obj\Debug\SistemaColegio.csproj.AssemblyReference.cache
 D:\PM\Ciclo 3\2-PSoftware\PSoftware - Clases\22-07-12\SistemaColegio\SistemaColegio\obj\Debug\SistemaColegio.csproj.SuggestedBindingRedirects.cache
 D:\PM\Ciclo 3\2-PSoftware\PSoftware - Clases\22-07-12\SistemaColegio\SistemaColegio\obj\Debug\SistemaColegio.exe.config
+D:\PM\Ciclo 3\2-PSoftware\PSoftware - Clases\22-07-12\SistemaColegio\SistemaColegio\obj\Debug\SistemaColegio.FrmEstudiante.resources
 D:\PM\Ciclo 3\2-PSoftware\PSoftware - Clases\22-07-12\SistemaColegio\SistemaColegio\obj\Debug\SistemaColegio.Properties.Resources.resources
 D:\PM\Ciclo 3\2-PSoftware\PSoftware - Clases\22-07-12\SistemaColegio\SistemaColegio\obj\Debug\SistemaColegio.csproj.GenerateResource.cache
 D:\PM\Ciclo 3\2-PSoftware\PSoftware - Clases\22-07-12\SistemaColegio\SistemaColegio\obj\Debug\SistemaColegio.csproj.CoreCompileInputs.cache
 D:\PM\Ciclo 3\2-PSoftware\PSoftware - Clases\22-07-12\SistemaColegio\SistemaColegio\obj\Debug\SistemaColegio.csproj.CopyComplete
 D:\PM\Ciclo 3\2-PSoftware\PSoftware - Clases\22-07-12\SistemaColegio\SistemaColegio\obj\Debug\SistemaColegio.exe
 D:\PM\Ciclo 3\2-PSoftware\PSoftware - Clases\22-07-12\SistemaColegio\SistemaColegio\obj\Debug\SistemaColegio.pdb
-D:\PM\Ciclo 3\2-PSoftware\PSoftware - Clases\22-07-12\SistemaColegio\SistemaColegio\obj\Debug\SistemaColegio.FrmEstudiante.resources

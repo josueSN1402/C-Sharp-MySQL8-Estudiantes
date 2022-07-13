@@ -21,10 +21,7 @@ namespace SistemaColegio
 
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
-            foreach (Control c in this.Controls)
-            {
-                if (c is TextBox) c.Text = string.Empty;
-            }
+            Limpiar();
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -50,7 +47,7 @@ namespace SistemaColegio
             {
                 string dni = dgvEstudiantes.CurrentRow.Cells[0].Value.ToString();
                 ctrl.Eliminar(dni);
-                btnNuevo.PerformClick();
+                Limpiar();
                 ctrl.Visualizar(null, dgvEstudiantes);
             }
         }
@@ -135,7 +132,7 @@ namespace SistemaColegio
                     if (sentinela)
                     {
                         MessageBox.Show("Registro guardado");
-                        btnNuevo.PerformClick();
+                        Limpiar();
                         ctrl.Visualizar(null, dgvEstudiantes);
                     }
                 }
@@ -161,6 +158,20 @@ namespace SistemaColegio
             txtNota1.Text = dgv.CurrentRow.Cells[6].Value.ToString();
             txtNota2.Text = dgv.CurrentRow.Cells[7].Value.ToString();
             txtNota3.Text = dgv.CurrentRow.Cells[8].Value.ToString();
+        }
+
+        private void Limpiar()
+        {
+            txtDNI.Text = string.Empty;
+            txtApa.Text = string.Empty;
+            txtAma.Text = string.Empty;
+            txtNom.Text = string.Empty;
+            txtCurso.Text = string.Empty;
+            txtEdad.Text = string.Empty;
+            txtNota1.Text = string.Empty;
+            txtNota2.Text = string.Empty;
+            txtNota3.Text = string.Empty;
+            txtDNI.Focus();
         }
     }
 }
